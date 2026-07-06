@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================= SEO ============================= -->
+<title>Sacred Pet Doula | Compassionate End-of-Life Support for Pets</title>
+<meta name="description" content="Sacred Pet Doula offers gentle, soulful support for pet families through anticipatory grief, sacred transition, end-of-life care, and remembrance.">
+<meta name="keywords" content="pet doula, pet loss, pet hospice, end of life support for pets, anticipatory grief, pet remembrance">
+<meta property="og:title" content="Sacred Pet Doula | Compassionate End-of-Life Support for Pets">
+<meta property="og:description" content="Gentle, soulful companionship for the sacred transitions we walk with our animals.">
+<meta property="og:type" content="website">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================= FONTS ============================= -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   ROOT / TOKENS
+   ============================================================ */
+:root{
+  --primary:#5D5AAE;
+  --primary-deep:#46437f;
+  --secondary:#DCD6F7;
+  --accent:#E8D8C3;
+  --bg:#FBFBFC;
+  --text:#3C3C52;
+  --white:#FFFFFF;
+  --shadow: 0 20px 60px rgba(93,90,174,0.10);
+  --radius-lg: 32px;
+  --radius-md: 20px;
+  --radius-sm: 12px;
+  --ease: cubic-bezier(.4,0,.2,1);
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'Lato', sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.7;
+  overflow-x:hidden;
+  font-weight:300;
+}
+
+h1,h2,h3,h4{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:500;
+  line-height:1.15;
+  color:var(--primary-deep);
+}
+
+a{color:inherit; text-decoration:none;}
+ul{list-style:none;}
+img{max-width:100%; display:block;}
+button{font-family:'Montserrat', sans-serif; cursor:pointer; border:none;}
+
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 32px;
+}
+
+.eyebrow{
+  font-family:'Montserrat', sans-serif;
+  font-size:0.72rem;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--primary);
+  font-weight:600;
+  display:inline-block;
+  margin-bottom:18px;
+}
+
+.section-heading{
+  font-size:clamp(2.2rem, 4vw, 3.2rem);
+  margin-bottom:20px;
+}
+
+.section-sub{
+  max-width:620px;
+  color:#6b6884;
+  font-size:1.05rem;
+  font-weight:300;
+}
+
+.section-pad{ padding:120px 0; }
+
+@media(max-width:768px){
+  .section-pad{ padding:80px 0; }
+}
+
+/* Reveal on scroll */
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{
+  font-family:'Montserrat', sans-serif;
+  font-size:0.82rem;
+  letter-spacing:0.05em;
+  font-weight:600;
+  padding:17px 38px;
+  border-radius:50px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  transition:all 0.45s var(--ease);
+  position:relative;
+  overflow:hidden;
+}
+
+.btn-primary{
+  background:linear-gradient(135deg, var(--primary), var(--primary-deep));
+  color:var(--white);
+  box-shadow:0 12px 30px rgba(93,90,174,0.30);
+}
+.btn-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 18px 40px rgba(93,90,174,0.40);
+}
+
+.btn-secondary{
+  background:transparent;
+  color:var(--primary-deep);
+  border:1.5px solid var(--primary);
+}
+.btn-secondary:hover{
+  background:var(--primary);
+  color:var(--white);
+  transform:translateY(-3px);
+}
+
+.btn-ghost{
+  background:var(--secondary);
+  color:var(--primary-deep);
+  font-size:0.75rem;
+  padding:13px 28px;
+}
+.btn-ghost:hover{
+  background:var(--primary);
+  color:var(--white);
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+header{
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:1000;
+  background:rgba(251,251,252,0.75);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(93,90,174,0.08);
+  transition:padding 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+header.scrolled{
+  box-shadow:0 8px 30px rgba(93,90,174,0.08);
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:22px 32px;
+  max-width:1280px;
+  margin:0 auto;
+  transition:padding 0.35s var(--ease);
+}
+header.scrolled nav{ padding:14px 32px; }
+
+.logo{
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.5rem;
+  font-weight:600;
+  color:var(--primary-deep);
+  letter-spacing:0.02em;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.logo-mark{
+  width:34px; height:34px;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, var(--secondary), var(--primary));
+  position:relative;
+  flex-shrink:0;
+}
+.logo-mark::after{
+  content:'';
+  position:absolute;
+  inset:9px;
+  border-radius:50%;
+  background:var(--white);
+  opacity:0.55;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:34px;
+}
+.nav-links a:not(.btn){
+  font-family:'Montserrat', sans-serif;
+  font-size:0.8rem;
+  font-weight:500;
+  letter-spacing:0.02em;
+  color:var(--text);
+  position:relative;
+  padding:6px 0;
+  transition:color 0.3s;
+}
+.nav-links a:not(.btn)::after{
+  content:'';
+  position:absolute;
+  bottom:0; left:0;
+  width:0%;
+  height:1.5px;
+  background:var(--primary);
+  transition:width 0.3s var(--ease);
+}
+.nav-links a:not(.btn):hover{ color:var(--primary); }
+.nav-links a:not(.btn):hover::after{ width:100%; }
+
+.nav-cta{
+  padding:12px 24px;
+  font-size:0.72rem;
+}
+
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  background:none;
+  z-index:1200;
+}
+.hamburger span{
+  width:26px; height:2px;
+  background:var(--primary-deep);
+  transition:all 0.35s var(--ease);
+  display:block;
+}
+.hamburger.active span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2){ opacity:0; }
+.hamburger.active span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+.mobile-menu{
+  position:fixed;
+  top:0; right:-100%;
+  width:min(340px, 82vw);
+  height:100vh;
+  background:var(--white);
+  box-shadow:-10px 0 50px rgba(93,90,174,0.18);
+  z-index:1100;
+  padding:100px 36px 40px;
+  transition:right 0.5s var(--ease);
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+.mobile-menu.active{ right:0; }
+.mobile-menu a{
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.5rem;
+  color:var(--primary-deep);
+}
+.mobile-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(60,60,82,0.35);
+  z-index:1050;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.4s;
+}
+.mobile-overlay.active{ opacity:1; pointer-events:all; }
+
+@media(max-width:900px){
+  .nav-links{ display:none; }
+  .hamburger{ display:flex; }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  padding:160px 0 100px;
+  background:
+    radial-gradient(ellipse 60% 50% at 85% 15%, rgba(232,216,195,0.55), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 10% 90%, rgba(220,214,247,0.65), transparent 60%),
+    var(--bg);
+  overflow:hidden;
+}
+
+/* Signature element: a slow-drifting "breath ring" motif representing
+   the rhythm of a held hand / a shared breath at time of transition */
+.breath-rings{
+  position:absolute;
+  right:-8%;
+  top:50%;
+  transform:translateY(-50%);
+  width:640px;
+  height:640px;
+  pointer-events:none;
+}
+.breath-rings svg{ width:100%; height:100%; }
+.ring{
+  fill:none;
+  stroke-width:1;
+  transform-origin:center;
+  animation:breathe 8s ease-in-out infinite;
+}
+.ring.r1{ stroke:var(--primary); opacity:0.28; animation-delay:0s; }
+.ring.r2{ stroke:var(--accent); opacity:0.5; animation-delay:-2.6s; }
+.ring.r3{ stroke:var(--secondary); opacity:0.7; animation-delay:-5.2s; }
+@keyframes breathe{
+  0%,100%{ transform:scale(0.94); opacity:0.35; }
+  50%{ transform:scale(1.04); opacity:0.75; }
+}
+.hero-feather{
+  position:absolute;
+  animation:float 7s ease-in-out infinite;
+  opacity:0.5;
+}
+@keyframes float{
+  0%,100%{ transform:translateY(0) rotate(0deg); }
+  50%{ transform:translateY(-18px) rotate(6deg); }
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+  max-width:660px;
+}
+
+.hero h1{
+  font-size:clamp(2.6rem, 6vw, 4.4rem);
+  font-style:italic;
+  font-weight:500;
+  margin-bottom:26px;
+}
+.hero h1 em{ font-style:normal; color:var(--primary); }
+
+.hero p{
+  font-size:1.15rem;
+  color:#5c5a76;
+  max-width:520px;
+  margin-bottom:42px;
+  font-weight:300;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.hero-scroll-cue{
+  position:absolute;
+  bottom:44px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.65rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--primary);
+  opacity:0.7;
+}
+.scroll-line{
+  width:1px; height:44px;
+  background:linear-gradient(var(--primary), transparent);
+  animation:scrollpulse 2.2s ease-in-out infinite;
+}
+@keyframes scrollpulse{
+  0%,100%{ opacity:0.3; }
+  50%{ opacity:1; }
+}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about{
+  background:var(--white);
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:80px;
+  align-items:center;
+}
+@media(max-width:900px){
+  .about-grid{ grid-template-columns:1fr; gap:50px; }
+}
+
+.about-visual{
+  position:relative;
+  aspect-ratio:4/5;
+  border-radius:var(--radius-lg);
+  background:
+    linear-gradient(160deg, var(--secondary) 0%, var(--accent) 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.about-visual::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.4), transparent 45%),
+    radial-gradient(circle at 75% 80%, rgba(93,90,174,0.18), transparent 50%);
+}
+.about-visual-icon{
+  position:relative;
+  z-index:2;
+  width:120px; height:120px;
+  opacity:0.85;
+}
+
+.about-values{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-top:36px;
+}
+.value-item{
+  padding:26px;
+  background:var(--bg);
+  border-radius:var(--radius-sm);
+  border:1px solid rgba(93,90,174,0.08);
+  transition:transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.value-item:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+}
+.value-item h4{
+  font-size:1.15rem;
+  margin-bottom:8px;
+}
+.value-item p{
+  font-size:0.88rem;
+  color:#78758f;
+}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services{
+  background:linear-gradient(180deg, var(--bg), #f5f3fb);
+}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:30px;
+  margin-top:70px;
+}
+@media(max-width:1000px){ .services-grid{ grid-template-columns:repeat(2,1fr);} }
+@media(max-width:640px){ .services-grid{ grid-template-columns:1fr;} }
+
+.service-card{
+  background:var(--white);
+  border-radius:var(--radius-md);
+  padding:44px 34px;
+  position:relative;
+  transition:transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+  border:1px solid rgba(93,90,174,0.06);
+}
+.service-card:hover{
+  transform:translateY(-10px);
+  box-shadow:var(--shadow);
+}
+.service-icon{
+  width:56px; height:56px;
+  border-radius:50%;
+  background:var(--secondary);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:26px;
+}
+.service-icon svg{ width:26px; height:26px; stroke:var(--primary-deep); }
+.service-card h3{
+  font-size:1.5rem;
+  margin-bottom:14px;
+}
+.service-card p{
+  font-size:0.92rem;
+  color:#6b6884;
+  margin-bottom:26px;
+  min-height:80px;
+}
+.service-card .btn-ghost{ font-size:0.7rem; padding:11px 22px; }
+
+.service-card.full{
+  grid-column:1 / -1;
+  display:flex;
+  align-items:center;
+  gap:40px;
+}
+@media(max-width:700px){
+  .service-card.full{ flex-direction:column; align-items:flex-start; }
+}
+.service-card.full .service-icon{ margin-bottom:0; flex-shrink:0; }
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testimonials{ background:var(--white); }
+.testi-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  margin-top:70px;
+}
+@media(max-width:900px){ .testi-grid{ grid-template-columns:1fr; } }
+
+.testi-card{
+  background:var(--bg);
+  border-radius:var(--radius-md);
+  padding:40px 32px;
+  position:relative;
+  transition:transform 0.4s var(--ease);
+}
+.testi-card:hover{ transform:translateY(-6px); }
+.testi-quote-mark{
+  font-family:'Cormorant Garamond', serif;
+  font-size:4rem;
+  color:var(--secondary);
+  line-height:1;
+  position:absolute;
+  top:14px; left:24px;
+}
+.testi-text{
+  font-style:italic;
+  font-size:1.02rem;
+  color:#55536e;
+  margin:36px 0 26px;
+  position:relative;
+  z-index:1;
+}
+.testi-author{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.testi-avatar{
+  width:44px;height:44px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+}
+.testi-author-name{
+  font-family:'Montserrat', sans-serif;
+  font-size:0.82rem;
+  font-weight:600;
+  color:var(--primary-deep);
+}
+.testi-author-pet{
+  font-size:0.78rem;
+  color:#8b88a3;
+}
+
+/* ============================================================
+   RESOURCES
+   ============================================================ */
+.resources{ background:linear-gradient(180deg, #f5f3fb, var(--bg)); }
+.resources-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+  margin-top:70px;
+}
+@media(max-width:900px){ .resources-grid{ grid-template-columns:repeat(2,1fr);} }
+@media(max-width:560px){ .resources-grid{ grid-template-columns:1fr;} }
+
+.resource-card{
+  background:var(--white);
+  border-radius:var(--radius-md);
+  padding:34px 26px;
+  text-align:center;
+  transition:transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  border:1px solid rgba(93,90,174,0.06);
+}
+.resource-card:hover{ transform:translateY(-8px); box-shadow:var(--shadow); }
+.resource-icon{
+  width:60px;height:60px;
+  margin:0 auto 20px;
+  border-radius:50%;
+  background:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+}
+.resource-icon svg{ width:28px;height:28px; stroke:var(--primary-deep); }
+.resource-card h4{ font-size:1.25rem; margin-bottom:10px; }
+.resource-card p{ font-size:0.85rem; color:#78758f; margin-bottom:22px; }
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq{ background:var(--white); }
+.faq-list{
+  max-width:800px;
+  margin:60px auto 0;
+}
+.faq-item{
+  border-bottom:1px solid rgba(93,90,174,0.14);
+}
+.faq-question{
+  width:100%;
+  text-align:left;
+  background:none;
+  padding:26px 10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.3rem;
+  color:var(--primary-deep);
+  gap:20px;
+}
+.faq-icon{
+  flex-shrink:0;
+  width:22px;height:22px;
+  position:relative;
+}
+.faq-icon::before, .faq-icon::after{
+  content:'';
+  position:absolute;
+  background:var(--primary);
+  transition:transform 0.4s var(--ease), opacity 0.4s;
+}
+.faq-icon::before{ width:100%; height:1.5px; top:50%; left:0; transform:translateY(-50%); }
+.faq-icon::after{ height:100%; width:1.5px; left:50%; top:0; transform:translateX(-50%); }
+.faq-item.active .faq-icon::after{ opacity:0; }
+
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.5s var(--ease), padding 0.5s var(--ease);
+  padding:0 10px;
+}
+.faq-item.active .faq-answer{
+  max-height:300px;
+  padding:0 10px 26px;
+}
+.faq-answer p{ font-size:0.95rem; color:#6b6884; }
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact{
+  background:linear-gradient(160deg, var(--primary-deep), var(--primary));
+  color:var(--white);
+  position:relative;
+  overflow:hidden;
+}
+.contact::before{
+  content:'';
+  position:absolute;
+  width:600px;height:600px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.04);
+  top:-200px; left:-150px;
+}
+.contact .eyebrow{ color:var(--accent); }
+.contact h2{ color:var(--white); }
+.contact .section-sub{ color:rgba(255,255,255,0.75); }
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:0.8fr 1.2fr;
+  gap:70px;
+  margin-top:60px;
+  position:relative;
+  z-index:1;
+}
+@media(max-width:900px){ .contact-grid{ grid-template-columns:1fr; gap:44px; } }
+
+.contact-info-item{
+  display:flex;
+  gap:18px;
+  margin-bottom:30px;
+  align-items:flex-start;
+}
+.contact-info-icon{
+  width:42px;height:42px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.12);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.contact-info-icon svg{ width:18px;height:18px; stroke:var(--white); }
+.contact-info-item h4{ color:var(--white); font-size:1.1rem; margin-bottom:4px; }
+.contact-info-item p{ color:rgba(255,255,255,0.7); font-size:0.9rem; }
+
+form#contactForm{
+  background:var(--white);
+  border-radius:var(--radius-lg);
+  padding:48px;
+  color:var(--text);
+}
+@media(max-width:560px){ form#contactForm{ padding:32px 24px; } }
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+@media(max-width:560px){ .form-row{ grid-template-columns:1fr; } }
+
+.form-group{ margin-bottom:22px; }
+.form-group label{
+  display:block;
+  font-family:'Montserrat', sans-serif;
+  font-size:0.72rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--primary-deep);
+  margin-bottom:8px;
+  font-weight:600;
+}
+.form-group input,
+.form-group textarea{
+  width:100%;
+  padding:14px 16px;
+  border:1.5px solid #e6e3f2;
+  border-radius:var(--radius-sm);
+  font-family:'Lato', sans-serif;
+  font-size:0.95rem;
+  color:var(--text);
+  background:var(--bg);
+  transition:border-color 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus{
+  outline:none;
+  border-color:var(--primary);
+}
+.form-group input.error,
+.form-group textarea.error{
+  border-color:#c0546a;
+}
+.error-msg{
+  color:#c0546a;
+  font-size:0.76rem;
+  margin-top:6px;
+  display:none;
+}
+.form-group.invalid .error-msg{ display:block; }
+
+.checkbox-group{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  margin-bottom:26px;
+}
+.checkbox-group input{ width:auto; margin-top:4px; accent-color:var(--primary); }
+.checkbox-group label{
+  font-family:'Lato', sans-serif;
+  font-size:0.85rem;
+  text-transform:none;
+  font-weight:400;
+  color:#6b6884;
+}
+
+.form-success{
+  display:none;
+  background:#eaf5ec;
+  color:#3b7a4e;
+  padding:18px 22px;
+  border-radius:var(--radius-sm);
+  font-size:0.92rem;
+  margin-bottom:22px;
+  align-items:center;
+  gap:10px;
+}
+.form-success.show{ display:flex; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{
+  background:#292750;
+  color:rgba(255,255,255,0.8);
+  padding:80px 0 30px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:50px;
+  margin-bottom:60px;
+}
+@media(max-width:800px){
+  .footer-grid{ grid-template-columns:1fr 1fr; }
+}
+@media(max-width:500px){
+  .footer-grid{ grid-template-columns:1fr; }
+}
+.footer-logo{
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.5rem;
+  color:var(--white);
+  margin-bottom:16px;
+}
+.footer-tagline{ font-size:0.9rem; color:rgba(255,255,255,0.55); max-width:280px; }
+.footer-col h5{
+  font-family:'Montserrat', sans-serif;
+  font-size:0.78rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--secondary);
+  margin-bottom:20px;
+}
+.footer-col ul li{ margin-bottom:12px; }
+.footer-col ul li a{
+  font-size:0.9rem;
+  color:rgba(255,255,255,0.65);
+  transition:color 0.3s;
+}
+.footer-col ul li a:hover{ color:var(--white); }
+
+.social-icons{ display:flex; gap:12px; margin-top:10px; }
+.social-icons a{
+  width:38px;height:38px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.08);
+  display:flex;align-items:center;justify-content:center;
+  transition:background 0.3s, transform 0.3s;
+}
+.social-icons a:hover{ background:var(--primary); transform:translateY(-4px); }
+.social-icons svg{ width:16px;height:16px; stroke:var(--white); }
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1);
+  padding-top:28px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:14px;
+  font-size:0.8rem;
+  color:rgba(255,255,255,0.45);
+}
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(60,60,82,0.45);
+  backdrop-filter:blur(4px);
+  z-index:2000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.4s;
+  padding:24px;
+}
+.modal-overlay.active{ opacity:1; pointer-events:all; }
+.modal-box{
+  background:var(--white);
+  border-radius:var(--radius-md);
+  padding:44px 38px;
+  max-width:400px;
+  text-align:center;
+  transform:scale(0.9);
+  transition:transform 0.4s var(--ease);
+}
+.modal-overlay.active .modal-box{ transform:scale(1); }
+.modal-icon{
+  width:56px;height:56px;
+  border-radius:50%;
+  background:var(--secondary);
+  margin:0 auto 20px;
+  display:flex;align-items:center;justify-content:center;
+}
+.modal-box h4{ font-size:1.4rem; margin-bottom:12px; }
+.modal-box p{ font-size:0.92rem; color:#6b6884; margin-bottom:24px; }
+
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
+.back-to-top{
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  width:50px;height:50px;
+  border-radius:50%;
+  background:var(--primary);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 30px rgba(93,90,174,0.35);
+  opacity:0;
+  transform:translateY(20px);
+  pointer-events:none;
+  transition:all 0.4s var(--ease);
+  z-index:900;
+}
+.back-to-top.show{ opacity:1; transform:translateY(0); pointer-events:all; }
+.back-to-top svg{ width:20px;height:20px; stroke:var(--white); }
+.back-to-top:hover{ background:var(--primary-deep); transform:translateY(-4px); }
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+}
+
+/* Focus visibility for accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+  outline:2px solid var(--primary);
+  outline-offset:3px;
+}
+
+.sr-only{
+  position:absolute;
+  width:1px;height:1px;
+  padding:0; margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER / NAVIGATION
+     ============================================================ -->
+<header id="siteHeader">
+  <nav aria-label="Main navigation">
+    <a href="#home" class="logo">
+      <span class="logo-mark" aria-hidden="true"></span>
+      Sacred Pet Doula
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="btn btn-primary nav-cta">Book a Gentle Connection Call</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#resources">Resources</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-primary" style="margin-top:10px;">Book a Gentle Connection Call</a>
+</div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="home">
+  <div class="breath-rings" aria-hidden="true">
+    <svg viewBox="0 0 640 640">
+      <circle class="ring r1" cx="320" cy="320" r="300"></circle>
+      <circle class="ring r2" cx="320" cy="320" r="230"></circle>
+      <circle class="ring r3" cx="320" cy="320" r="160"></circle>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="hero-inner reveal visible">
+      <span class="eyebrow">A Gentle Companion for the Hardest Season</span>
+      <h1>Walking beside you through your pet's <em>sacred transition</em></h1>
+      <p>Sacred Pet Doula offers soulful, unhurried support for the animals you love and the grief that comes with loving them — from anticipatory grief through remembrance, you don't have to hold this alone.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Book a Gentle Connection Call</a>
+        <a href="#about" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-cue" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section class="about section-pad" id="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-visual reveal">
+        <svg class="about-visual-icon" viewBox="0 0 100 100" fill="none" stroke="#5D5AAE" stroke-width="1.4" aria-hidden="true">
+          <path d="M50 88C50 88 15 62 15 36C15 22 25 14 36 14C43 14 48 18 50 24C52 18 57 14 64 14C75 14 85 22 85 36C85 62 50 88 50 88Z"/>
+        </svg>
+      </div>
+
+      <div class="about-content reveal">
+        <span class="eyebrow">Our Story</span>
+        <h2 class="section-heading">Presence, not procedure</h2>
+        <p class="section-sub">Sacred Pet Doula was founded on a simple belief: that animals deserve the same dignity, tenderness, and ceremony in their final chapter that we would want for the people we love. We are not a clinic. We are a hand to hold — human and animal alike — through anticipatory grief, active transition, and the long tender work of remembrance.</p>
+        <p class="section-sub" style="margin-top:16px;">Our mission is to help you slow down, listen to what your companion is asking for, and honor this passage as the sacred one it is.</p>
+
+        <div class="about-values">
+          <div class="value-item">
+            <h4>Presence</h4>
+            <p>We sit with what is, without rushing toward what's next.</p>
+          </div>
+          <div class="value-item">
+            <h4>Reverence</h4>
+            <p>Every transition is treated as sacred, never clinical.</p>
+          </div>
+          <div class="value-item">
+            <h4>Honesty</h4>
+            <p>Gentle truth-telling, so you can make peace, not just decisions.</p>
+          </div>
+          <div class="value-item">
+            <h4>Continuity</h4>
+            <p>Support doesn't end at goodbye — remembrance is part of the care.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES
+     ============================================================ -->
+<section class="services section-pad" id="services">
+  <div class="container">
+    <span class="eyebrow">How We Support You</span>
+    <h2 class="section-heading">Care for every part of the journey</h2>
+    <p class="section-sub">Each family's path looks different. These are the ways we can walk alongside yours.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M12 21s-7-4.5-9.5-9C.5 8 2 4 6 4c2 0 4 1.5 6 5 2-3.5 4-5 6-5 4 0 5.5 4 3.5 8-2.5 4.5-9.5 9-9.5 9z"/></svg>
+        </div>
+        <h3>Anticipatory Grief</h3>
+        <p>Gentle guidance for the grief that begins before goodbye — naming what you feel and finding steadiness while you still have time together.</p>
+        <a href="#contact" class="btn btn-ghost">Learn More</a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M12 2v20M4 8l8-6 8 6M4 16l8 6 8-6"/></svg>
+        </div>
+        <h3>Sacred Transition</h3>
+        <p>In-the-moment companionship during the passage itself, creating a calm, unhurried space rooted in ritual and comfort.</p>
+        <a href="#contact" class="btn btn-ghost">Learn More</a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg>
+        </div>
+        <h3>End-of-Life Support</h3>
+        <p>Practical and emotional guidance as decisions arise — comfort care options, timing, and what to expect, explained with warmth.</p>
+        <a href="#contact" class="btn btn-ghost">Learn More</a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8 13c1 1.5 2.5 2 4 2s3-.5 4-2"/></svg>
+        </div>
+        <h3>Remembrance</h3>
+        <p>Rituals, keepsakes, and space to grieve fully after loss — because love doesn't end when a heartbeat does.</p>
+        <a href="#contact" class="btn btn-ghost">Learn More</a>
+      </div>
+
+      <div class="service-card full reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M12 2C9 6 6 9 6 13a6 6 0 0012 0c0-4-3-7-6-11z"/></svg>
+        </div>
+        <div>
+          <h3>Holistic Support</h3>
+          <p>Whole-family care that considers children, other pets, and your own nervous system — because grief ripples through every relationship in the home.</p>
+          <a href="#contact" class="btn btn-ghost">Learn More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="testimonials section-pad" id="testimonials">
+  <div class="container">
+    <span class="eyebrow">Words From Families We've Held</span>
+    <h2 class="section-heading">Gentle words, hard-won peace</h2>
+
+    <div class="testi-grid">
+
+      <div class="testi-card reveal">
+        <div class="testi-quote-mark" aria-hidden="true">&ldquo;</div>
+        <p class="testi-text">I didn't know grief could feel this held. Our doula gave us permission to slow down and just be with Bear in his last weeks, instead of rushing toward a decision.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" aria-hidden="true"></div>
+          <div>
+            <div class="testi-author-name">Maren T.</div>
+            <div class="testi-author-pet">Bear's person</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-quote-mark" aria-hidden="true">&ldquo;</div>
+        <p class="testi-text">The ritual she created for Willow's transition was the most beautiful thing I've witnessed. It turned a devastating day into something sacred.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" aria-hidden="true"></div>
+          <div>
+            <div class="testi-author-name">Priya S.</div>
+            <div class="testi-author-pet">Willow's person</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-quote-mark" aria-hidden="true">&ldquo;</div>
+        <p class="testi-text">Months later, the remembrance session helped me put words to a grief I'd been carrying quietly. I finally feel like I said a full goodbye to Otis.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" aria-hidden="true"></div>
+          <div>
+            <div class="testi-author-name">Daniel R.</div>
+            <div class="testi-author-pet">Otis's person</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RESOURCES
+     ============================================================ -->
+<section class="resources section-pad" id="resources">
+  <div class="container">
+    <span class="eyebrow">Free Support Materials</span>
+    <h2 class="section-heading">Resources to hold onto</h2>
+    <p class="section-sub">A small library for the in-between moments, whenever you need something to lean on.</p>
+
+    <div class="resources-grid">
+
+      <div class="resource-card reveal">
+        <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 4h9a3 3 0 013 3v13H7a3 3 0 01-3-3V4z"/><path d="M20 4h-4v16h4a0 0 0 000-0V4z"/></svg></div>
+        <h4>Books</h4>
+        <p>Curated reading on pet loss, anticipatory grief, and healing.</p>
+        <button class="btn btn-ghost resource-btn">View Resource</button>
+      </div>
+
+      <div class="resource-card reveal">
+        <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 5h16M4 12h16M4 19h10"/></svg></div>
+        <h4>Articles</h4>
+        <p>Gentle guides on decision-making, ritual, and coping day to day.</p>
+        <button class="btn btn-ghost resource-btn">View Resource</button>
+      </div>
+
+      <div class="resource-card reveal">
+        <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M12 20c0-3 3-5 6-5s4 2 4 5"/></svg></div>
+        <h4>Support Groups</h4>
+        <p>Community spaces to grieve alongside others who understand.</p>
+        <button class="btn btn-ghost resource-btn">View Resource</button>
+      </div>
+
+      <div class="resource-card reveal">
+        <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg></div>
+        <h4>Videos</h4>
+        <p>Short, soothing videos on ritual-building and saying goodbye.</p>
+        <button class="btn btn-ghost resource-btn">View Resource</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="faq section-pad" id="faq">
+  <div class="container">
+    <span class="eyebrow">Common Questions</span>
+    <h2 class="section-heading">You're allowed to ask anything</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What exactly does a pet doula do?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer">
+          <p>A pet doula offers emotional, practical, and ritual support through your pet's end-of-life journey — similar to how a human death doula supports a family. We don't provide medical care; we provide presence, guidance, and space to grieve well.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How is this different from my veterinarian?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer">
+          <p>Your vet handles the medical picture. We hold the emotional and spiritual one — helping you process anticipatory grief, plan meaningful rituals, and navigate the harder conversations at a human pace.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          When should I reach out?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer">
+          <p>Anytime — from the moment you receive a difficult diagnosis, through active transition, or even months after loss when remembrance work still feels needed. There's no "too early" or "too late."</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you offer in-person and virtual sessions?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Many families begin with a virtual Gentle Connection Call, and we can arrange in-person support for transition days depending on location.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What if my children are part of this too?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer">
+          <p>Our holistic support sessions are built with the whole household in mind, including age-appropriate ways to help children understand and grieve alongside you.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How do I know if I'm ready to talk about this?
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer">
+          <p>You don't have to feel ready. Many of the families we support reach out simply because the weight has become too heavy to carry alone — that's reason enough.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section class="contact section-pad" id="contact">
+  <div class="container">
+    <span class="eyebrow">Reach Out</span>
+    <h2 class="section-heading">Let's talk, gently</h2>
+    <p class="section-sub">Fill out the form below and we'll respond with care, usually within one business day. There is no wrong way to begin this conversation.</p>
+
+    <div class="contact-grid">
+
+      <div class="contact-info reveal">
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg></div>
+          <div>
+            <h4>Email</h4>
+            <p>hello@sacredpetdoula.com</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.4 2.1L8 9.7a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg></div>
+          <div>
+            <h4>Phone</h4>
+            <p>(555) 019-2847</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg></div>
+          <div>
+            <h4>Hours</h4>
+            <p>Mon–Sat, 8am–7pm. Emergency support available.</p>
+          </div>
+        </div>
+      </div>
+
+      <form id="contactForm" novalidate class="reveal" aria-label="Contact form">
+
+        <div class="form-success" id="formSuccess" role="status">
+          <span>&#10003;</span>
+          <span>Thank you — your message has been received. We'll be in touch gently and soon.</span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" id="group-name">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+            <div class="error-msg">Please share your name.</div>
+          </div>
+          <div class="form-group" id="group-email">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+            <div class="error-msg">Please enter a valid email.</div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" id="group-phone">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="form-group" id="group-petname">
+            <label for="petname">Pet's Name *</label>
+            <input type="text" id="petname" name="petname" required>
+            <div class="error-msg">Please share your pet's name.</div>
+          </div>
+        </div>
+
+        <div class="form-group" id="group-message">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          <div class="error-msg">Please share a little about your situation.</div>
+        </div>
+
+        <div class="checkbox-group" id="group-consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent">I consent to being contacted by Sacred Pet Doula regarding my inquiry. *</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send Message</button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Sacred Pet Doula</div>
+        <p class="footer-tagline">Compassionate companionship through your pet's sacred transition, and every season around it.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M15 3h-2a4 4 0 00-4 4v3H7v4h2v7h4v-7h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9 17c1-3 1.5-5.5 1.5-7A2.5 2.5 0 0113 7.5c1.5 0 2.5 1 2.5 2.5 0 2-1 4-1 5.5 0 1 .5 1.5 1.3 1.5 1.5 0 2.7-2 2.7-4.5 0-3-2-5-4.8-5-3.4 0-5.4 2.4-5.4 5 0 1 .3 1.7.8 2.2"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#resources">Resources</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Book a Call</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:hello@sacredpetdoula.com">hello@sacredpetdoula.com</a></li>
+          <li><a href="tel:5550192847">(555) 019-2847</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Sacred Pet Doula. All rights reserved.</span>
+      <span>Held with care, always.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     MODAL (Resources)
+     ============================================================ -->
+<div class="modal-overlay" id="resourceModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <div class="modal-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#5D5AAE" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></div>
+    <h4 id="modalTitle">Coming Soon</h4>
+    <p>This section will later contain downloadable resources.</p>
+    <button class="btn btn-primary" id="modalClose">Close</button>
+  </div>
+</div>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+/* ============================================================
+   STICKY NAV SHADOW ON SCROLL
+   ============================================================ */
+const header = document.getElementById('siteHeader');
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 40){
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+  if(window.scrollY > 600){
+    backToTop.classList.add('show');
+  } else {
+    backToTop.classList.remove('show');
+  }
+});
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top:0, behavior:'smooth' });
+});
+
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileOverlay = document.getElementById('mobileOverlay');
+
+function closeMobileMenu(){
+  hamburgerBtn.classList.remove('active');
+  mobileMenu.classList.remove('active');
+  mobileOverlay.classList.remove('active');
+  hamburgerBtn.setAttribute('aria-expanded', 'false');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+}
+
+hamburgerBtn.addEventListener('click', () => {
+  const isActive = hamburgerBtn.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+  mobileOverlay.classList.toggle('active');
+  hamburgerBtn.setAttribute('aria-expanded', String(isActive));
+  mobileMenu.setAttribute('aria-hidden', String(!isActive));
+});
+
+mobileOverlay.addEventListener('click', closeMobileMenu);
+
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', closeMobileMenu);
+});
+
+/* ============================================================
+   SMOOTH SCROLL (all in-page anchors)
+   ============================================================ */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e){
+    const targetId = this.getAttribute('href');
+    if(targetId.length > 1){
+      const target = document.querySelector(targetId);
+      if(target){
+        e.preventDefault();
+        const offset = 90;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior:'smooth' });
+      }
+    }
+  });
+});
+
+/* ============================================================
+   FAQ ACCORDION
+   ============================================================ */
+document.querySelectorAll('.faq-item').forEach(item => {
+  const question = item.querySelector('.faq-question');
+  question.addEventListener('click', () => {
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('active');
+      i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+    if(!isActive){
+      item.classList.add('active');
+      question.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+/* ============================================================
+   RESOURCE MODAL
+   ============================================================ */
+const resourceModal = document.getElementById('resourceModal');
+const modalClose = document.getElementById('modalClose');
+
+document.querySelectorAll('.resource-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    resourceModal.classList.add('active');
+  });
+});
+
+function closeModal(){ resourceModal.classList.remove('active'); }
+
+modalClose.addEventListener('click', closeModal);
+resourceModal.addEventListener('click', (e) => {
+  if(e.target === resourceModal) closeModal();
+});
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape') closeModal();
+});
+
+/* ============================================================
+   CONTACT FORM VALIDATION + SUBMISSION
+   ============================================================ */
+const form = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
+
+function setFieldState(groupId, valid){
+  const group = document.getElementById(groupId);
+  const field = group.querySelector('input, textarea');
+  if(valid){
+    group.classList.remove('invalid');
+    field.classList.remove('error');
+  } else {
+    group.classList.add('invalid');
+    field.classList.add('error');
+  }
+}
+
+function isValidEmail(value){
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+
+  let valid = true;
+
+  const name = document.getElementById('name');
+  const email = document.getElementById('email');
+  const petname = document.getElementById('petname');
+  const message = document.getElementById('message');
+  const consent = document.getElementById('consent');
+
+  if(!name.value.trim()){ setFieldState('group-name', false); valid = false; } else { setFieldState('group-name', true); }
+  if(!email.value.trim() || !isValidEmail(email.value.trim())){ setFieldState('group-email', false); valid = false; } else { setFieldState('group-email', true); }
+  if(!petname.value.trim()){ setFieldState('group-petname', false); valid = false; } else { setFieldState('group-petname', true); }
+  if(!message.value.trim()){ setFieldState('group-message', false); valid = false; } else { setFieldState('group-message', true); }
+
+  if(!consent.checked){
+    document.getElementById('group-consent').style.outline = '1px solid #c0546a';
+    document.getElementById('group-consent').style.borderRadius = '8px';
+    valid = false;
+  } else {
+    document.getElementById('group-consent').style.outline = 'none';
+  }
+
+  if(!valid) return;
+
+  // Simulate successful submission
+  formSuccess.classList.add('show');
+  form.reset();
+
+  setTimeout(() => {
+    formSuccess.classList.remove('show');
+  }, 6000);
+});
+
+/* ============================================================
+   FADE-IN ON SCROLL (IntersectionObserver)
+   ============================================================ */
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold:0.15 });
+
+revealEls.forEach(el => observer.observe(el));
+
+/* ============================================================
+   FOOTER YEAR
+   ============================================================ */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
